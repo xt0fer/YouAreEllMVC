@@ -138,6 +138,7 @@ public class YouAreEll {
         NaturalCLI ncli = new NaturalCLI(cs);
 
         while (notDone) {
+            System.out.println("Command? (help for options)");
             try {
                 ncli.execute(in.readLine());
             } catch (ExecutionException e) {
@@ -148,5 +149,18 @@ public class YouAreEll {
         }
     }
 
+    // this is junk. you need to link to your Controllers.
+    //
+    public String getIds() {
+        return MakeURLCall("/ids", "GET", "");
+    }
+
+    public String getMessages() {
+        return MakeURLCall("/messages", "GET", "");
+    }
+
+    public String MakeURLCall(String mainurl, String method, String jpayload) {
+        return "nada";
+    }
 
 }
