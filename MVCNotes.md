@@ -4,10 +4,8 @@
 
 two major entities for messages
 
-Id post/get of Id and list
-
-Message
-POST/GET/LIST of messages
+You'll have to implement each. Use them to go from JSON to an Object and
+use them throughout the rest of the code.
 
 ### View
 

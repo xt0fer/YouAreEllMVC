@@ -4,6 +4,8 @@
 
 You'll write a Client to exchange JSON data over HTTP with a Server, in this case, the UnderARock(TM) server.
 
+**DO YOU HAVE POSTMAN YET? No? Download it now.**
+
 ### The Point
 
 * You are to write a command interpreter using the provided `SimpleShell` class.
@@ -62,7 +64,7 @@ specific command.
 #### ID commands in shell
 
 * In the shell, `ids` should return a formatted list of the IDs available to you.
-* `ids your_name your_github_id` command should post your Name and your GithubId to the server.
+* `put-id your_name your_github_id` command should post your Name and your GithubId to the server.
 * If you do this twice with two different Names, but the name GithubId, the name on the server gets changed.
 
 -
@@ -86,11 +88,11 @@ json payload for /ids/ - this is a sample
  
 #### Example: 
 
-If I type `cmd? ids Kris xt0fer` into the shell, your command processor creates a JSON object which looks like:
+If I type `cmd? put-id Kris xt0fer` into the shell, your command processor creates a JSON object which looks like:
 
  ```json
  {
-     "userid": "-", // gets filled w id
+     "userid": "-", // gets filled w id from server
      "name": "Kris",
      "github": "xt0fer"
  }
@@ -104,8 +106,8 @@ and send it as the body of a POST request to  `http://zipcode.rocks:8085/ids/`
 in the shell
 * `messages` should return the last 20 messages, nicely formatted.
 * `messages your_github_id` should return the last 20 messages sent to you.
-* `send your_github_id 'Hello World' ` should post a new message in the timeline
-* `send your_github_id 'my string message' to some_friend_githubid` should post a message to your friend from you on the timeline.
+* `send 'Hello World' ` should post a new message in the timeline
+* `sendto some_friend_githubid 'my string message'` should post a message to your friend from you on the timeline.
 
 the Messages API is:
 
