@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import rocks.zipcode.models.Id;
 
-public class IdController {
+public class IdController implements IdControllerIface {
     Id myId;
 
     public IdController(WebTransactions wt) {}

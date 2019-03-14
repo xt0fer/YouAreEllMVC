@@ -18,14 +18,14 @@ public class YouAreEll {
 
 
     // Create the commands
-    Command getIdsCommand;
-    Command getMessagesCommand;
-    Command sendMessageCommand;
-    Command exitCommand;
+    private Command getIdsCommand;
+    private Command getMessagesCommand;
+    private Command sendMessageCommand;
+    private Command exitCommand;
 
-    Set<Command> cs = new HashSet<Command>();
+    private Set<Command> cs = new HashSet<Command>();
 
-    Boolean notDone;
+    private Boolean notDone;
 
     private MessageController msgCtrl;
     private IdController idCtrl;
@@ -38,7 +38,7 @@ public class YouAreEll {
 
     public static void main(String[] args) {
 
-        WebTransactionsImpl xactionHandler = null;
+        WebTransactionsImpl xactionHandler = new WebTransactionsImpl();
         // hmm: notice Dependency Injection?
         YouAreEll urlhandler = new YouAreEll(new MessageController(xactionHandler),
                 new IdController(xactionHandler));
