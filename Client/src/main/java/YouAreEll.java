@@ -1,10 +1,19 @@
+import controllers.*;
+
 public class YouAreEll {
 
-    YouAreEll() {
+    private MessageController msgCtrl;
+    private IdController idCtrl;
+
+    public YouAreEll (MessageController m, IdController j) {
+        // used j because i seems awkward
+        this.msgCtrl = m;
+        this.idCtrl = j;
     }
 
     public static void main(String[] args) {
-        YouAreEll urlhandler = new YouAreEll();
+        // hmm: is this Dependency Injection?
+        YouAreEll urlhandler = new YouAreEll(new MessageController(), new IdController());
         System.out.println(urlhandler.MakeURLCall("/ids", "GET", ""));
         System.out.println(urlhandler.MakeURLCall("/messages", "GET", ""));
     }

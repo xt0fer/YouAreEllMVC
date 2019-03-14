@@ -2,8 +2,10 @@
 
 ## Client HTTP/REST API for UnderARock
 
+You'll write a Client to exchange JSON data over HTTP with a Server, in this case, the UnderARock(TM) server.
 
 ### The Point
+
 * You are to write a command interpreter using the provided `SimpleShell` class.
 * You're going to create a way
 	* for commands to be typed into your shell,
@@ -58,6 +60,7 @@ specific command.
 ## IDs
 
 #### ID commands in shell
+
 * In the shell, `ids` should return a formatted list of the IDs available to you.
 * `ids your_name your_github_id` command should post your Name and your GithubId to the server.
 * If you do this twice with two different Names, but the name GithubId, the name on the server gets changed.
@@ -66,6 +69,7 @@ specific command.
 ### The IDs API is:
 
 #### URL: /ids/
+
 * `GET` : Get all github ids registered
 * `POST` : add your github id / name to be registered
 * `PUT` : change the name linked to your github id
@@ -81,6 +85,7 @@ json payload for /ids/ - this is a sample
 ```
  
 #### Example: 
+
 If I type `cmd? ids Kris xt0fer` into the shell, your command processor creates a JSON object which looks like:
 
  ```json
