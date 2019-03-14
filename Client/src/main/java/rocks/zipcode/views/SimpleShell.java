@@ -14,8 +14,8 @@ import rocks.zipcode.controllers.WebTransactionsImpl;
 
 // Simple Shell is a Console view for rocks.zipcode.YouAreEll.
 // you do not need to use it anymore.
-// Much of this has been moved into the YouAreEll class itself.
-
+// Much of this functionality has been moved into the YouAreEll class itself.
+// I am considering removing it from the project in the future.
 
 /*
  * just another example of how to handle user input.
