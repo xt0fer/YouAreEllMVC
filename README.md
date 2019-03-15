@@ -8,7 +8,7 @@ You'll write a Client to exchange JSON data over HTTP with a Server, in this cas
 
 ### The Point
 
-* You are to write a command interpreter using the provided `SimpleShell` class.
+* You are to write a command interpreter using the provided `YouAreEll` class.
 * You're going to create a way
 	* for commands to be typed into your shell,
 	* to read the typed commands and arguments,
@@ -36,7 +36,11 @@ You'll write a Client to exchange JSON data over HTTP with a Server, in this cas
 	* An ID object gets a "user id" field assigned to it.
 	* Any sequence number, timestamp or userid you put into a JSON template gets overwritten by the server when you POST it. 
 
+Use POSTMAN (the app) to play with calling a couple of the URLs to the server.
 
+The overall architecture of ths project has been done for you. It uses the model/view/controller concepts.
+
+![alt text](./YouAreEllMVCLab.png "Block Architecture")
 
 * You're going to create a series of REST API handlers that will each perform a 
 specific command.
@@ -167,12 +171,8 @@ and send it as the body of a POST request to  `http://zipcode.rocks:8085/ids/xt0
 
 
 
+
 ## Part Two
-
-What's that ProcessBuilder stuff about? In the SimpleShell class, take a look. How can that be used
-as a pattern to use threads to make the API calls and wait for the response? Maybe launch a new thread on every request?
-
-## Part Three
 
 Build a better set of commands. Make the "fromid" intrinsic, so it isn't needed on the various shell commands.
 Add a feature where you can send messages by someone's name. Create a means where the client watches the server for 
