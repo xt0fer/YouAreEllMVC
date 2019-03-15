@@ -42,15 +42,20 @@ The overall architecture of ths project has been done for you. It uses the model
 
 ![alt text](./YouAreEllMVCLab.png "Block Architecture")
 
-* You're going to create a series of REST API handlers that will each perform a 
-specific command.
-	* Each one of the command methods will then call a even lower-level method that makes a certain kind of HTTP request (GET, POST, PUT) to specific filled-in URL.
+You will need to write the code for each layer, and wire it up using dependency
+injection.
+
+* You'll make a couple very simple POJO (plain old java objects) model objects for Id and Message.
+
+* You're going to create a series of REST API clients that will each perform a 
+specific command from the controllers.
+	* Each one of the command methods will then call a even lower-level methodin WebTransactions that makes a certain kind of HTTP request (GET, POST, PUT) to specific filled-in URL.
 
 * The Under-A-Rock Server can be reached at `http://zipcode.rocks:8085` Everyone uses the same server. 		
 	* There are two segments to the API and two kinds of commands in the shell, the ID segment and the Messages segment.
 
 
-* You can explore several ways of doing the HTTP URL calls to the server, using the one of these:
+* You can explore several ways of doing the HTTP URL calls to the server inside of WebTransactions, using the one of these:
 	* [Apache HTTP Client Library](http://hc.apache.org/httpcomponents-client-ga/index.html)
 	* [Unirest for Java](http://unirest.io/java.html)
 	* [Square's OKHttp](https://github.com/square/okhttp)
@@ -63,7 +68,15 @@ specific command.
 
 * It's possible you may also need to understand some of what the [Jackson package](https://github.com/FasterXML/jackson) does.
 
+* You'll create a couple "views" to print out the current information from each command
+on the user's behalf. ALL I/O between the user and your program should be entirely in the 
+YouAreEll class. No printlns in any other class (except for debugging.)
+
+* You should write some simple tests to prove your classes work.
+
 ## IDs
+
+This is the stuff your controllers should know how to do.
 
 #### ID commands in shell
 
